@@ -40,8 +40,8 @@ Complejo Complejo :: operator+(Complejo r2) {
 Complejo Complejo :: Distribuir(Complejo a, Complejo b) {
     int t1 = a.getP_Real() * b.getP_Real(); //REAL
     int t2 = a.getP_Real() * b.getP_Imaginario(); //IMAGINARIO
-    int t3 = b.getP_Imaginario() * b.getP_Real(); //IMAGINARIO
-    int t4 = b.getP_Imaginario() * b.getP_Imaginario() * -1; //REAL
+    int t3 = a.getP_Imaginario() * b.getP_Real(); //IMAGINARIO
+    int t4 = a.getP_Imaginario() * b.getP_Imaginario() * -1; //REAL
     int defT1 = t1 + t4;
     int defT2 = t2 + t3;
     Complejo nuevo(defT1, defT2);
