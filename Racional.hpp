@@ -43,11 +43,13 @@ Racional Racional :: Simplificar(int numerador, int denominador) {
             }
         }
     }
+    return Racional(numerador, denominador);
 }
 
 Racional Racional :: operator+(Racional r2) {
     int nNum = (this -> numerador * r2.getDenominador()) + (r2.getNumerador() * this -> denominador);
     int nDen = this -> denominador * r2.getDenominador();
+    //Racional otro(nNum, nDen);
     Racional otro = Simplificar(nNum, nDen);
     return otro;
 }
@@ -55,6 +57,7 @@ Racional Racional :: operator+(Racional r2) {
 Racional Racional :: operator*(Racional r2) {
     int nNum = this -> numerador * r2.getNumerador();
     int nDen = this -> denominador * r2.getDenominador();
+    //Racional otro = Simplificar(nNum, nDen);
     Racional otro = Simplificar(nNum, nDen);
     return otro;
 }
