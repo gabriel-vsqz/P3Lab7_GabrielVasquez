@@ -14,7 +14,7 @@ Vector<Racional> actualR2;
 Vector<Complejo> actualC1;
 Vector<Complejo> actualC2;
 
-int contR = 0, contC = 0;
+int contR = 0, contC = 0, operacion;
 
 void declararRacional() {
     int n1, d1, n2, d2, n3, d3;
@@ -98,15 +98,29 @@ void Listar(bool R, bool C) {
 }
 
 void OperarRacionales() {
-    Vector<Racional> respuesta;
-    respuesta = actualR1 + actualR2;
-    cout << respuesta.toString();
+    if (operacion == 1) {
+        Vector<Racional> respuesta;
+        respuesta = actualR1 + actualR2;
+        cout << actualR1.toString() << " + " << actualR2.toString() << " = " << respuesta.toString();
+    }
+    if (operacion == 2) {
+        Vector<Racional> respuesta;
+        respuesta = actualR1 * actualR2;
+        cout << actualR1.toString() << " * " << actualR2.toString() << " = " << respuesta.toString();
+    }
 }
 
 void OperarComplejos() {
-    Vector<Complejo> respuesta;
-    respuesta = actualC1 + actualC2;
-    cout << respuesta.toString();
+    if (operacion == 1) {
+        Vector<Complejo> respuesta;
+        respuesta = actualC1 + actualC2;
+        cout << actualC1.toString() << " + " << actualC2.toString() << " = " << respuesta.toString();
+    }
+    if (operacion == 2) {
+        Vector<Complejo> respuesta;
+        respuesta = actualC1 * actualC2;
+        cout << actualC1.toString() << " * " << actualC2.toString() << " = " << respuesta.toString();
+    }
 }
 
 int main() {
@@ -141,6 +155,12 @@ int main() {
                 while (tipo_vector < 1 && tipo_vector > 2) {
                     cout << "Debe ingresar uno de los dos tipos que se le presentan.\n1. Racional\n2. Complejo\n: ";
                     cin >> tipo_vector;
+                }
+                cout << "\n1. Sumar\n2. Multiplicar\n: ";
+                cin >> operacion;
+                while (operacion < 1 && operacion > 2) {
+                    cout << "Debe ingresar una de las operaciones que se le presentan.\n1. Sumar\n2. Multiplicar\n: ";
+                    cin >> operacion;
                 }
                 if (tipo_vector == 1 && racionales.size() > 0) {
                     Listar(true, false);
