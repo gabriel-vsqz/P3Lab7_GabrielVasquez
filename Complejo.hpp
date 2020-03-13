@@ -38,5 +38,8 @@ Complejo &Complejo :: operator*(Complejo r2) {
 }
 
 string Complejo :: toString() {
-    return to_string(p_real) + to_string(p_imaginaria) + "i";
+    if (p_imaginaria > 0)
+        return to_string(p_real) + "+" + to_string(p_imaginaria) + "i";
+    else
+        return to_string(p_real) + to_string(p_imaginaria) + "i";
 }

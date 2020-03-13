@@ -9,6 +9,11 @@ using namespace std;
 vector<Vector<Racional>> racionales;
 vector<Vector<Complejo>> complejos;
 
+Vector<Racional> actualR1;
+Vector<Racional> actualR2;
+Vector<Complejo> actualC1;
+Vector<Complejo> actualC2;
+
 int contR = 0, contC = 0;
 
 void declararRacional() {
@@ -78,29 +83,28 @@ void declararComplejo() {
 void Listar(bool R, bool C) {
     if (R) {
         cout << "\nVectores Racionales:\n";
-        cout << "[";
         for (int i = 0; i < racionales.size(); i++) {
-            cout << "   " << i << "." << racionales.at(i).toString();
+            cout << "   " << i << ". " << racionales.at(i).toString();
             if (i != racionales.size() - 1)
                 cout << ",";
         }
-        cout << "]\n";
     }
 
     if (C) {
-        cout << "Vectores Complejos:\n";
-        cout << "[";
+        cout << "\n\nVectores Complejos:\n";
         for (int i = 0; i < complejos.size(); i++) {
-            cout << "   " << i << "." << complejos.at(i).toString();
+            cout << "   " << i << ". " << complejos.at(i).toString();
             if (i != complejos.size() - 1)
                 cout << ",";
         }
-        cout << "]\n";
     }
+    cout << endl;
 }
 
 void OperarRacionales() {
-    
+}
+
+void OperarComplejos() {
 }
 
 int main() {
@@ -136,13 +140,51 @@ int main() {
                     cout << "Debe ingresar uno de los dos tipos que se le presentan.\n1. Racional\n2. Complejo\n: ";
                     cin >> tipo_vector;
                 }
-                if (tipo_vector == 1) {
+                if (tipo_vector == 1 && racionales.size() > 0) {
                     Listar(true, false);
+                    cout << endl;
+                    int pos1, pos2;
+                    cout << "Elija Vector 1: ";
+                    cin >> pos1;
+                    while (pos1 < 0 && pos1 > racionales.size() - 1) {
+                        cout << "Debe ingresar uno de los vectores registrados.\n: ";
+                        cin >> pos1;
+                    }
+                    cout << "Elija Vector 2: ";
+                    cin >> pos2;
+                    while (pos2 < 0 && pos2 > racionales.size() - 1) {
+                        cout << "Debe ingresar uno de los vectores registrados.\n: ";
+                        cin >> pos2;
+                    }
+                    racionales.at(pos1) = actualR1;
+                    racionales.at(pos2) = actualR2;
                     OperarRacionales();
+                    cout << endl;
+                } else {
+                    cout << "No hay vectores de este tipo para poder operar." << endl;
                 }
-                if (tipo_vector == 2) {
+                if (tipo_vector == 2 && complejos.size() > 0) {
                     Listar(false, true);
-                    //OperarComplejas();
+                    cout << endl;
+                    int pos1, pos2;
+                    cout << "Elija Vector 1: ";
+                    cin >> pos1;
+                    while (pos1 < 0 && pos1 > complejos.size() - 1) {
+                        cout << "Debe ingresar uno de los vectores registrados.\n: ";
+                        cin >> pos1;
+                    }
+                    cout << "Elija Vector 2: ";
+                    cin >> pos2;
+                    while (pos2 < 0 && pos2 > complejos.size() - 1) {
+                        cout << "Debe ingresar uno de los vectores registrados.\n: ";
+                        cin >> pos2;
+                    }
+                    complejos.at(pos1) = actualC1;
+                    complejos.at(pos2) = actualC2;
+                    OperarComplejos();
+                    cout << endl;
+                } else {
+                    cout << "No hay vectores de este tipo para poder operar." << endl;
                 }
             } break;
             
