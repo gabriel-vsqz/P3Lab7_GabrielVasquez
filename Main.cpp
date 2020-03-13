@@ -99,11 +99,13 @@ void Listar(bool R, bool C) {
 
 void OperarRacionales() {
     if (operacion == 1) {
+        cout << "\n---------- SUMA ----------\n";
         Vector<Racional> respuesta;
         respuesta = actualR1 + actualR2;
         cout << actualR1.toString() << " + " << actualR2.toString() << " = " << respuesta.toString();
     }
     if (operacion == 2) {
+        cout << "\n---------- MULTIPLICACIÓN -----------\n";
         Vector<Racional> respuesta;
         respuesta = actualR1 * actualR2;
         cout << actualR1.toString() << " * " << actualR2.toString() << " = " << respuesta.toString();
@@ -112,11 +114,13 @@ void OperarRacionales() {
 
 void OperarComplejos() {
     if (operacion == 1) {
+        cout << "\n---------- SUMA ----------\n";
         Vector<Complejo> respuesta;
         respuesta = actualC1 + actualC2;
         cout << actualC1.toString() << " + " << actualC2.toString() << " = " << respuesta.toString();
     }
     if (operacion == 2) {
+        cout << "\n---------- MULTIPLICACIÓN ----------\n";
         Vector<Complejo> respuesta;
         respuesta = actualC1 * actualC2;
         cout << actualC1.toString() << " * " << actualC2.toString() << " = " << respuesta.toString();
@@ -134,7 +138,7 @@ int main() {
                 int tipo_vector;
                 cout << "\n¿Qué tipo de vector desea ingresar?\n1. Racional\n2. Complejo\n: ";
                 cin >> tipo_vector;
-                while (tipo_vector < 1 && tipo_vector > 2) {
+                while (tipo_vector < 1 || tipo_vector > 2) {
                     cout << "Debe ingresar uno de los dos tipos que se le presentan.\n1. Racional\n2. Complejo\n: ";
                     cin >> tipo_vector;
                 }
@@ -152,13 +156,13 @@ int main() {
                 int tipo_vector;
                 cout << "\n¿Qué tipo de vector desea operar?\n1. Racional\n2. Complejo\n: ";
                 cin >> tipo_vector;
-                while (tipo_vector < 1 && tipo_vector > 2) {
+                while (tipo_vector < 1 || tipo_vector > 2) {
                     cout << "Debe ingresar uno de los dos tipos que se le presentan.\n1. Racional\n2. Complejo\n: ";
                     cin >> tipo_vector;
                 }
                 cout << "\n1. Sumar\n2. Multiplicar\n: ";
                 cin >> operacion;
-                while (operacion < 1 && operacion > 2) {
+                while (operacion < 1 || operacion > 2) {
                     cout << "Debe ingresar una de las operaciones que se le presentan.\n1. Sumar\n2. Multiplicar\n: ";
                     cin >> operacion;
                 }
