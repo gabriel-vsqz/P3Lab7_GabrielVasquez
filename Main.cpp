@@ -102,13 +102,13 @@ void Listar(bool R, bool C) {
 
 void OperarRacionales() {
     if (operacion == 1) {
-        cout << "\n---------- SUMA ----------\n";
+        cout << "\n--------------- SUMA ---------------\n";
         Vector<Racional> respuesta;
         respuesta = actualR1 + actualR2;
         cout << actualR1.toString() << " + " << actualR2.toString() << " = " << respuesta.toString();
     }
     if (operacion == 2) {
-        cout << "\n---------- MULTIPLICACIÓN -----------\n";
+        cout << "\n--------------- MULTIPLICACIÓN ----------------\n";
         Vector<Racional> respuesta;
         respuesta = actualR1 * actualR2;
         cout << actualR1.toString() << " * " << actualR2.toString() << " = " << respuesta.toString();
@@ -131,6 +131,7 @@ void OperarComplejos() {
 }
 
 int main() {
+    cout << "\n---------- Administrador de Espacios Vectoriales en R3 ----------\n";
     bool pass = true;
     int opcion;
     while (pass) {
