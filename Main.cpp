@@ -28,6 +28,7 @@ void declararRacional() {
         cin >> d1;
     }
     Racional R1(n1, d1);
+    //Racional R1 = R1.Simplificar(n1, d1);
 
     cout << "Ingrese Numerador 2° Término: ";
     cin >> n2;
@@ -38,6 +39,7 @@ void declararRacional() {
         cin >> d2;
     }
     Racional R2(n2, d2);
+    //Racional R2 = R2.Simplificar(n2, d2);
 
     cout << "Ingrese Numerador 3° Término: ";
     cin >> n3;
@@ -48,6 +50,7 @@ void declararRacional() {
         cin >> d3;
     }
     Racional R3(n3, d3);
+    //Racional R3 = R3.Simplificar(n3, d3);
 
     Vector<Racional> nuevo(R1, R2, R3);
     contR++;
