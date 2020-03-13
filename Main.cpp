@@ -84,18 +84,14 @@ void Listar(bool R, bool C) {
     if (R) {
         cout << "\nVectores Racionales:\n";
         for (int i = 0; i < racionales.size(); i++) {
-            cout << "   " << i << ". " << racionales.at(i).toString();
-            if (i != racionales.size() - 1)
-                cout << ",";
+            cout << "   " << i << ". " << racionales.at(i).toString() << endl;
         }
     }
 
     if (C) {
         cout << "\n\nVectores Complejos:\n";
         for (int i = 0; i < complejos.size(); i++) {
-            cout << "   " << i << ". " << complejos.at(i).toString();
-            if (i != complejos.size() - 1)
-                cout << ",";
+            cout << "   " << i << ". " << complejos.at(i).toString() << endl;
         }
     }
     cout << endl;
@@ -162,8 +158,8 @@ int main() {
                         cout << "Debe ingresar uno de los vectores registrados.\n: ";
                         cin >> pos2;
                     }
-                    racionales.at(pos1) = actualR1;
-                    racionales.at(pos2) = actualR2;
+                    actualR1 = racionales[pos1];
+                    actualR2 = racionales[pos2];
                     OperarRacionales();
                     cout << endl;
                 }
@@ -183,8 +179,8 @@ int main() {
                         cout << "Debe ingresar uno de los vectores registrados.\n: ";
                         cin >> pos2;
                     }
-                    complejos.at(pos1) = actualC1;
-                    complejos.at(pos2) = actualC2;
+                    actualC1 = complejos[pos1];
+                    actualC2 = complejos[pos2];
                     OperarComplejos();
                     cout << endl;
                 } else {
