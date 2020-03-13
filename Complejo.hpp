@@ -10,8 +10,8 @@ class Complejo {
     public:
         Complejo();
         Complejo(int, int);
-        Complejo &operator+(Complejo);
-        Complejo &operator*(Complejo);
+        Complejo operator+(Complejo);
+        Complejo operator*(Complejo);
         int getP_Real() {
             return p_real;
         }
@@ -29,12 +29,10 @@ Complejo :: Complejo(int real, int imag) {
     p_imaginaria = imag;
 }
 
-Complejo &Complejo :: operator+(Complejo r2) {
-
+Complejo Complejo :: operator+(Complejo r2) {
 }
 
-Complejo &Complejo :: operator*(Complejo r2) {
-
+Complejo Complejo :: operator*(Complejo r2) {
 }
 
 string Complejo :: toString() {

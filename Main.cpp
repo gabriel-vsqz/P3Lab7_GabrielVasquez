@@ -102,9 +102,15 @@ void Listar(bool R, bool C) {
 }
 
 void OperarRacionales() {
+    Vector<Racional> respuesta;
+    respuesta = actualR1 + actualR2;
+    cout << respuesta.toString();
 }
 
 void OperarComplejos() {
+    Vector<Complejo> respuesta;
+    respuesta = actualC1 + actualC2;
+    cout << respuesta.toString();
 }
 
 int main() {
@@ -160,10 +166,8 @@ int main() {
                     racionales.at(pos2) = actualR2;
                     OperarRacionales();
                     cout << endl;
-                } else {
-                    cout << "No hay vectores de este tipo para poder operar." << endl;
                 }
-                if (tipo_vector == 2 && complejos.size() > 0) {
+                else if (tipo_vector == 2 && complejos.size() > 0) {
                     Listar(false, true);
                     cout << endl;
                     int pos1, pos2;
