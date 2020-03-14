@@ -106,12 +106,14 @@ void OperarRacionales() {
         Vector<Racional> respuesta;
         respuesta = actualR1 + actualR2;
         cout << actualR1.toString() << " + " << actualR2.toString() << " = " << respuesta.toString();
+        racionales.push_back(respuesta);
     }
     if (operacion == 2) {
         cout << "\n--------------- MULTIPLICACIÓN ----------------\n";
         Vector<Racional> respuesta;
         respuesta = actualR1 * actualR2;
         cout << actualR1.toString() << " * " << actualR2.toString() << " = " << respuesta.toString();
+        racionales.push_back(respuesta);
     }
 }
 
@@ -121,12 +123,14 @@ void OperarComplejos() {
         Vector<Complejo> respuesta;
         respuesta = actualC1 + actualC2;
         cout << actualC1.toString() << " + " << actualC2.toString() << " = " << respuesta.toString();
+        complejos.push_back(respuesta);
     }
     if (operacion == 2) {
         cout << "\n---------- MULTIPLICACIÓN ----------\n";
         Vector<Complejo> respuesta;
         respuesta = actualC1 * actualC2;
         cout << actualC1.toString() << " * " << actualC2.toString() << " = " << respuesta.toString();
+        complejos.push_back(respuesta);
     }
 }
 
